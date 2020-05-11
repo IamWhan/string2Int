@@ -47,7 +47,20 @@ namespace ConsoleApp1
                 }
             }
 
-            return Convert.ToInt32(result);
+            return convertToInt(result);
+        }
+
+        public static int convertToInt(String numString)
+        {
+            int answer = 0;
+            int factor = 1;
+
+            for (int i = numString.Length - 1; i >= 0; i--)
+            {
+                answer += (numString[i] - '0') * factor;
+                factor *= 10;
+            }
+            return answer;
         }
     }
 }
